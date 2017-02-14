@@ -11,7 +11,8 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
             
             <?php
                 # 1. otetaan yhteys palvelimeen ja valitaan data15 -tietokanta käyttöön
@@ -25,7 +26,7 @@
                 $result = $my->query('SELECT * FROM dynasty');  
 
                     echo '<table class="table table-striped">';
-                    echo '<tr><th>Pykälä</th><th>Toimielin</th><th>Viimeisin kokous</th><th>Dokumentti tyyppi<th></tr>';
+                    echo '<tr><th>Pykälä</th><th>Toimielin</th><th>Viimeisin kokous</th><th>Dokumentti tyyppi</th></tr>';
                 # 3. luetaan kyselyn tulos rivi kerrallaan
                 while($t = $result->fetch_object()) {
                 
@@ -43,7 +44,8 @@
                 $my->close
             ?>
             
-            
+                </div>
+                <div class="col-sm-1">
             </div>
         </div>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
