@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Lisää Tietoja</title>
+    <title>Poista Tietoja</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <style>
@@ -26,18 +26,22 @@ table, th, td {
   </head>
   <body class="container">
   
-<div class="container" style="background-color:#f2f3f4">
+<div class="container" style="background-color:#f1f1f1">
   <div class="row">
     <div class="col">
-      1 of 2
+      <a href="elimet.php">Etusivu</a>
     </div>
     <div class="col">
-      1 of 2
+      <a href="lisaa_tieto.php">Lisää</a>
+    </div>
+    <div class="col">
+      <a href="poista_tieto.php">Poista</a>
+    </div>
+    <div class="col">
+      <a href="nollaa_tid.php">Nollaa tid</a>
     </div>
   </div>
 </div>
-  
-    <h1>Hello, world!</h1>
     
 <div class="container" style="background-color:#f2f3f4">
 <form method="GET">

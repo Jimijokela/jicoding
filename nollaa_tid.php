@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Lisää Tietoja</title>
+    <title>Nollaa tid</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <style>
@@ -47,13 +47,7 @@ table, th, td {
 <form method="GET">
   <div class="row">
     <div class="col">    
-<input type="text" name="Toimielimet" 
-placeholder="Kaupunginhallitus"> Toimielimet<br>
-<input type="text" name="Kokous" 
-placeholder="14.02.2017"> Kokous<br>
-<input type="text" name="Dokumentti" 
-placeholder="Pöytäkirja"> Dokumentti<br>
-<button type="submit" name="send" value="true">Lisää</button>
+<button type="submit" name="send" value="true">Nollaa tid</button>
     </div>
   </div>
 </form>
@@ -62,9 +56,6 @@ placeholder="Pöytäkirja"> Dokumentti<br>
     <?php
         # Luetaan lomakkeen muuttujat
         $send = $_GET['send'];
-        $Toimielimet = $_GET['Toimielimet'];
-        $Kokous = $_GET['Kokous'];
-        $Dokumentti = $_GET['Dokumentti'];
 
     # Tarkistetaan onko lomakkeen nappia painettu. Jos on, niin suoritetaan
     # SGL-kysely
@@ -76,9 +67,7 @@ placeholder="Pöytäkirja"> Dokumentti<br>
           }
 
           $my->set_charset('utf8');
-          $my->query('INSERT INTO dynasty
-          (Toimielimet,Kokous,Dokumentti)
-          VALUES("'.$Toimielimet.'","'.$Kokous.'","'.$Dokumentti.'")');
+          $my->query('ALTER TABLE dynasty AUTO_INCREMENT = 1');
 
         $my->close();   # Suljetaan yhteys tietokantaan
     }
