@@ -26,7 +26,12 @@
     </div>
   </div>
 </div>
-    
+
+<div class="container text-center">
+    <a href="http://www.kokkola.fi/">Kokkola</a>
+    <h1>Toimielimet</h1>
+</div>
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-1"></div>
