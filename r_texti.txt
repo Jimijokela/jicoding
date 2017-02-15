@@ -23,3 +23,5 @@ http://cosmo.kpedu.fi/tietokanta/
 )
 
 www.op-ura.fi/#jobs
+https://fonts.google.com/specimen/Nunito?selection
+https://www.sketchapp.com/
