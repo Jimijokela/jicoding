@@ -14,10 +14,10 @@
 <div class="container" style="background-color:#f1f1f1">
   <div class="row">
     <div class="col">
-      <a href="elimet.php">Etusivu</a>
+      <a href="elimet.php"> Etusivu</a>
     </div>
     <div class="col">
-      <a href="testi_login.php">Login_t</a>
+      <a href="t_login.php">Login </a>
     </div>
   </div>
 </div>
