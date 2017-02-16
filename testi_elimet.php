@@ -17,13 +17,7 @@
       <a href="elimet.php">Etusivu</a>
     </div>
     <div class="col">
-      <a href="lisaa_tieto.php">Lisää</a>
-    </div>
-    <div class="col">
-      <a href="poista_tieto.php">Poista</a>
-    </div>
-    <div class="col">
-      <a href="nollaa_tid.php">Nollaa tid</a>
+      <a href="testi_login.php">Login_t</a>
     </div>
   </div>
 </div>
