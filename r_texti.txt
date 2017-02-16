@@ -25,3 +25,31 @@ http://cosmo.kpedu.fi/tietokanta/
 www.op-ura.fi/#jobs
 https://fonts.google.com/specimen/Nunito?selection
 https://www.sketchapp.com/
+
+
+(	toimielimet.php		Tämä malli oli tehty foundationilla.
+
+<div class="row">
+	<div class="small-6 medium-6 large-8 columns">Toimielimet</div>
+	<div class="small-6 medium-3 large-2 columns">Viimeisin kokous</div>
+	<div class="small-12 medium-2 large-2 columns">Dokumentti tyyppi</div>
+</div>
+
+<?php
+include "settings.php";
+
+$otsikko = 'SELECT * FROM 665B_toimielimet';
+$nayta = $my->query($otsikko);
+
+while($t = $nayta->fetch_object())
+{
+echo '<div class="row">';
+echo '<div class="small-6 medium-6 large-8 columns">.$t->Nimi.</div>';
+echo '<div class="small-6 medium-3 large-2 columns">13.13.2017</div>';
+echo '<div class="small-6 medium-2 large-2 columns">Pöytäkirja</div>';
+echo '</div>';
+}
+
+$my -> close();
+?>
+)
