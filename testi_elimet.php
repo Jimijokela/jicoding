@@ -50,7 +50,7 @@
                 
                     echo '<tr>';
                     echo '<td>'.$t->tid.'</td>';
-                    echo '<td>'.$t->Toimielimet.'</td>';
+                    echo '<td><a href="Toimielin.php?id='.$t->tid.'">'.$t->Toimielimet.'</a></td>';
                     echo '<td>'.$t->Kokous.'</td>';
                     echo '<td>'.$t->Dokumentti.'</td>';
                     echo '</tr>';
