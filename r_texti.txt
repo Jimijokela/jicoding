@@ -53,3 +53,6 @@ echo '</div>';
 $my -> close();
 ?>
 )
+
+
+SELECT * from dynasty2 WHERE id = '.$_GET["id"].'
