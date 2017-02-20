@@ -41,18 +41,19 @@
                 }
                 #valitaan tietokannan merkistä
                 $my->set_charset('utf8');
-                $result = $my->query('SELECT * FROM dynasty');  
+                $result = $my->query('SELECT * from dynasty2 
+                WHERE tid = "'.$_GET["id"].'"');  
 
                     echo '<table class="table table-striped">';
-                    echo '<tr><th>Pykälä</th><th>Toimielin</th><th>Viimeisin kokous</th><th>Dokumentti tyyppi</th></tr>';
+                    echo '<tr><th>id</th><th>pvm</th><th>elpk</th><th>tid</th></tr>';
                 # 3. luetaan kyselyn tulos rivi kerrallaan
                 while($t = $result->fetch_object()) {
                 
                     echo '<tr>';
+                    echo '<td>'.$t->id.'</td>';
+                    echo '<td>'.$t->pvm.'</td>';
+                    echo '<td>'.$t->elkp.'</td>';
                     echo '<td>'.$t->tid.'</td>';
-                    echo '<td><a href="Toimielin.php?id='.$t->tid.'">'.$t->Toimielimet.'</a></td>';
-                    echo '<td>'.$t->Kokous.'</td>';
-                    echo '<td>'.$t->Dokumentti.'</td>';
                     echo '</tr>';
 
                 }
