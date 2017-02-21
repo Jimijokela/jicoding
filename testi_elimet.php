@@ -4,17 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Dynasty Kokkola</title>
-        <link rel="icon" type="image/png" 
+        <link rel="icon" type="image/png"
         href="http://kokkola.oncloudos.com/kuvat/DWEB.ICO">
         <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     </head>
     <body>
-    
+
 <div class="container" style="background-color:#f1f1f1">
   <div class="row">
     <div class="col">
-      <a href="elimet.php"> Etusivu</a>
+      <a href="testi_elimet.php"> Etusivu</a>
     </div>
     <div class="col">
       <a href="t_login.php">Login </a>
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
-            
+
             <?php
                 # 1. otetaan yhteys palvelimeen ja valitaan data15 -tietokanta käyttöön
                 $my=mysqli_connect("localhost","data15","jNTKdg3NTbRBuVEn","data15");
@@ -41,27 +41,27 @@
                 }
                 #valitaan tietokannan merkistä
                 $my->set_charset('utf8');
-                $result = $my->query('SELECT * FROM dynasty');  
+                $result = $my->query('SELECT * FROM dynasty');
 
                     echo '<table class="table table-striped">';
                     echo '<tr><th>Pykälä</th><th>Toimielin</th><th>Viimeisin kokous</th><th>Dokumentti tyyppi</th></tr>';
                 # 3. luetaan kyselyn tulos rivi kerrallaan
                 while($t = $result->fetch_object()) {
-                
+
                     echo '<tr>';
                     echo '<td>'.$t->tid.'</td>';
                     echo '<td><a href="poytakirja.php?id='.$t->tid.'">'.$t->Toimielimet.'</a></td>';
                     echo '<td>'.$t->Kokous.'</td>';
-                    echo '<td>'.$t->Dokumentti.'</td>';
+                    echo '<td><a href="elpk.php?id='.$t->tid.'">'.$t->Dokumentti.'</a></td>';
                     echo '</tr>';
 
                 }
                     echo '</table>';
-           
+
                 # 4. suljetaan yhteys
                 $my->close
             ?>
-            
+
                 </div>
                 <div class="col-sm-1">
             </div>

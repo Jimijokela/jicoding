@@ -17,14 +17,14 @@
       <a href="testi_elimet.php"> Etusivu</a>
     </div>
     <div class="col">
-      <a href="p_login.php">Login </a>
+      <a href="e_login.php">Login </a>
     </div>
   </div>
 </div>
 
 <div class="container text-center">
     <a href="http://www.kokkola.fi/">Kokkola</a>
-    <h1>Pöytäkirja</h1>
+    <h1>Dokumenttityyppi</h1>
 </div>
 
         <div class="container">
@@ -41,19 +41,19 @@
                 }
                 #valitaan tietokannan merkistä
                 $my->set_charset('utf8');
-                $result = $my->query('SELECT * from dynasty2
-                WHERE tid = "'.$_GET["id"].'"');
+                $result = $my->query('SELECT * from dynasty2b
+                WHERE dokumentti = "'.$_GET["id"].'"');
 
                     echo '<table class="table table-striped">';
-                    echo '<tr><th>id</th><th>pvm</th><th>elpk</th><th>tid</th></tr>';
+                    echo '<tr><th>asianro</th><th>pvm</th><th>otsikko</th><th>dokumentti</th></tr>';
                 # 3. luetaan kyselyn tulos rivi kerrallaan
                 while($t = $result->fetch_object()) {
 
                     echo '<tr>';
-                    echo '<td>'.$t->id.'</td>';
+                    echo '<td>'.$t->asianro.'</td>';
                     echo '<td>'.$t->pvm.'</td>';
-                    echo '<td>'.$t->elkp.'</td>';
-                    echo '<td>'.$t->tid.'</td>';
+                    echo '<td>'.$t->otsikko.'</td>';
+                    echo '<td>'.$t->dokumentti.'</td>';
                     echo '</tr>';
 
                 }
