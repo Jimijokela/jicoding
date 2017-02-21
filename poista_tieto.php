@@ -46,6 +46,9 @@ table, th, td {
       <a href="poista_elpk.php">ELPK</a>
     </div>
     <div class="col">
+      <a href="poista_ti.php">Tiedot</a>
+    </div>
+    <div class="col">
       <a href="poista_poy.php">Poytakirja</a>
     </div>
   </div>

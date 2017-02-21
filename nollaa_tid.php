@@ -48,6 +48,9 @@ table, th, td {
     <div class="col">
       <a href="lisaa_poy.php">Poytakirja</a>
     </div>
+    <div class="col">
+      <a href="lisaa_ti.php">Tiedot</a>
+    </div>
   </div>
 </div>
     
@@ -55,7 +58,7 @@ table, th, td {
 <form method="GET">
   <div class="row">
     <div class="col">    
-<button type="submit" name="send" value="true">Nollaa tid/id/asianro</button>
+<button type="submit" name="send" value="true">Nollaa tid/id/asianro/Pykala</button>
     </div>
   </div>
 </form>
@@ -78,12 +81,13 @@ table, th, td {
           $my->query('ALTER TABLE dynasty AUTO_INCREMENT = 1');
           $my->query('ALTER TABLE dynasty2 AUTO_INCREMENT = 1');
           $my->query('ALTER TABLE dynasty2b AUTO_INCREMENT = 1');
+          $my->query('ALTER TABLE dynasty3a AUTO_INCREMENT = 1');
 
         $my->close();   # Suljetaan yhteys tietokantaan
     }
     ?>
 
-<h1>Nollaa tid/id/asianro lasku suurimpaan lukuun plus yksi.</h1>
+<h1>Nollaa tid/id/asianro/Pykala luku suurimpaan lukuun plus yksi.</h1>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

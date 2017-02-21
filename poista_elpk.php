@@ -43,7 +43,10 @@ table, th, td {
   </div>
   <div class="row">
     <div class="col">
-      <a href="poista_elpk.php">ELPK</a>
+      <a href="poista_poy.php">Pöytäkirja</a>
+    </div>
+    <div class="col">
+      <a href="poista_ti.php">Tiedot</a>
     </div>
     <div class="col">
       <a href="poista_tieto.php">Etusivun taulukko</a>

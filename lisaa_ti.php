@@ -32,10 +32,10 @@ table, th, td {
       <a href="testi_elimet.php">Etusivu</a>
     </div>
     <div class="col">
-      <a href="lisaa_elpk.php">Lisää</a>
+      <a href="lisaa_ti.php">Lisää</a>
     </div>
     <div class="col">
-      <a href="poista_elpk.php">Poista</a>
+      <a href="poista_ti.php">Poista</a>
     </div>
     <div class="col">
       <a href="nollaa_tid.php">Nollaa tid</a>
@@ -43,10 +43,10 @@ table, th, td {
   </div>
   <div class="row">
     <div class="col">
-      <a href="lisaa_poy.php">Pöytäkirja</a>
+      <a href="lisaa_elpk.php">ELPK</a>
     </div>
     <div class="col">
-      <a href="lisaa_ti.php">Tiedot</a>
+      <a href="lisaa_poy.php">Pöytäkirja</a>
     </div>
     <div class="col">
       <a href="lisaa_tieto.php">Etusivun taulukko</a>
@@ -58,12 +58,16 @@ table, th, td {
 <form method="GET">
   <div class="row">
     <div class="col">
+<input type="text" name="Pykala"
+placeholder="1"> Pykälä/asianro<br>
 <input type="text" name="pvm"
 placeholder="2017-02-21"> pvm<br>
 <input type="text" name="otsikko"
 placeholder="otsikko"> otsikko<br>
-<input type="text" name="dokumentti"
-placeholder="1"> dokumentti<br>
+<input type="text" name="teksti"
+placeholder="Asiaa"> teksti<br>
+<input type="text" name="Osallistujat"
+placeholder="Jo Jo, Hilo Hillonen"> Osallistujat<br>
 <button type="submit" name="send" value="true">Lisää</button>
     </div>
   </div>
@@ -73,9 +77,11 @@ placeholder="1"> dokumentti<br>
     <?php
         # Luetaan lomakkeen muuttujat
         $send = $_GET['send'];
+        $Pykala = $_GET['Pykala'];
         $pvm = $_GET['pvm'];
         $otsikko = $_GET['otsikko'];
-        $dokumentti = $_GET['dokumentti'];
+        $teksti = $_GET['teksti'];
+        $Osallistujat = $_GET['Osallistujat'];
 
     # Tarkistetaan onko lomakkeen nappia painettu. Jos on, niin suoritetaan
     # SGL-kysely
@@ -87,9 +93,9 @@ placeholder="1"> dokumentti<br>
           }
 
           $my->set_charset('utf8');
-          $my->query('INSERT INTO dynasty2b
-          (pvm,otsikko,dokumentti)
-          VALUES("'.$pvm.'","'.$otsikko.'","'.$dokumentti.'")');
+          $my->query('INSERT INTO dynasty3a
+          (Pykala,pvm,otsikko,teksti,Osallistujat)
+          VALUES("'.$Pykala.'","'.$pvm.'","'.$otsikko.'","'.$teksti.'","'.$Osallistujat.'")');
 
         $my->close();   # Suljetaan yhteys tietokantaan
     }
@@ -103,17 +109,18 @@ placeholder="1"> dokumentti<br>
       }
 
       $my->set_charset('utf8');
-    $tulos = $my->query('SELECT * FROM dynasty2b');
+    $tulos = $my->query('SELECT * FROM dynasty3a');
 
         echo '<table>';
-        echo '<tr><th>asianro</th><th>pvm</th><th>otsikko</th><th>dokumentti</th></tr>';
+        echo '<tr><th>Pykala</th><th>pvm</th><th>otsikko</th><th>teksti</th><th>Osallistujat</th></tr>';
 
         while( $t = $tulos->fetch_object() ) {
             echo '<tr>';
-            echo '<td>'.$t->asianro.'</td>';
+            echo '<td>'.$t->Pykala.'</td>';
             echo '<td>'.$t->pvm.'</td>';
             echo '<td>'.$t->otsikko.'</td>';
-            echo '<td>'.$t->dokumentti.'</td>';
+            echo '<td>'.$t->teksti.'</td>';
+            echo '<td>'.$t->Osallistujat.'</td>';
             echo '</tr>';
           }
           echo '</table>';

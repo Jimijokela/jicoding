@@ -17,7 +17,18 @@
       <a href="testi_elimet.php"> Etusivu</a>
     </div>
     <div class="col">
-      <a href="e_login.php">Login </a>
+      <a href="e_login.php">Login ELPK</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a href="t_login.php">Login Etusivu</a>
+    </div>
+    <div class="col">
+      <a href="p_login.php">Login Pöytäkirja</a>
+    </div>
+    <div class="col">
+      <a href="ti_login.php">Login Tiedot</a>
     </div>
   </div>
 </div>
@@ -52,7 +63,7 @@
                     echo '<tr>';
                     echo '<td>'.$t->asianro.'</td>';
                     echo '<td>'.$t->pvm.'</td>';
-                    echo '<td>'.$t->otsikko.'</td>';
+                    echo '<td><a href="tiedot.php?id='.$t->asianro.'">'.$t->otsikko.'</a></td>';
                     echo '<td>'.$t->dokumentti.'</td>';
                     echo '</tr>';
 

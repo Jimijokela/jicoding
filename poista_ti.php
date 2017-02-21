@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Lisää Tietoja</title>
+    <title>Poista Tietoja</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <style>
@@ -32,10 +32,10 @@ table, th, td {
       <a href="testi_elimet.php">Etusivu</a>
     </div>
     <div class="col">
-      <a href="lisaa_elpk.php">Lisää</a>
+      <a href="lisaa_ti.php">Lisää</a>
     </div>
     <div class="col">
-      <a href="poista_elpk.php">Poista</a>
+      <a href="poista_ti.php">Poista</a>
     </div>
     <div class="col">
       <a href="nollaa_tid.php">Nollaa tid</a>
@@ -43,13 +43,13 @@ table, th, td {
   </div>
   <div class="row">
     <div class="col">
-      <a href="lisaa_poy.php">Pöytäkirja</a>
+      <a href="poista_elpk.php">ELPK</a>
     </div>
     <div class="col">
-      <a href="lisaa_ti.php">Tiedot</a>
+      <a href="poista_poy.php">Pöytäkirja</a>
     </div>
     <div class="col">
-      <a href="lisaa_tieto.php">Etusivun taulukko</a>
+      <a href="poista_tieto.php">Etusivun taulukko</a>
     </div>
   </div>
 </div>
@@ -58,13 +58,9 @@ table, th, td {
 <form method="GET">
   <div class="row">
     <div class="col">
-<input type="text" name="pvm"
-placeholder="2017-02-21"> pvm<br>
-<input type="text" name="otsikko"
-placeholder="otsikko"> otsikko<br>
-<input type="text" name="dokumentti"
-placeholder="1"> dokumentti<br>
-<button type="submit" name="send" value="true">Lisää</button>
+<input type="text" name="Pykala"
+placeholder="4"> Pykala/asianro<br>
+<button type="submit" name="send" value="true">Poista</button>
     </div>
   </div>
 </form>
@@ -73,9 +69,7 @@ placeholder="1"> dokumentti<br>
     <?php
         # Luetaan lomakkeen muuttujat
         $send = $_GET['send'];
-        $pvm = $_GET['pvm'];
-        $otsikko = $_GET['otsikko'];
-        $dokumentti = $_GET['dokumentti'];
+        $Pykala = $_GET['Pykala'];
 
     # Tarkistetaan onko lomakkeen nappia painettu. Jos on, niin suoritetaan
     # SGL-kysely
@@ -87,9 +81,8 @@ placeholder="1"> dokumentti<br>
           }
 
           $my->set_charset('utf8');
-          $my->query('INSERT INTO dynasty2b
-          (pvm,otsikko,dokumentti)
-          VALUES("'.$pvm.'","'.$otsikko.'","'.$dokumentti.'")');
+          $my->query('DELETE FROM dynasty3a WHERE
+          Pykala="'.$Pykala.'" ');
 
         $my->close();   # Suljetaan yhteys tietokantaan
     }
@@ -103,17 +96,18 @@ placeholder="1"> dokumentti<br>
       }
 
       $my->set_charset('utf8');
-    $tulos = $my->query('SELECT * FROM dynasty2b');
+    $tulos = $my->query('SELECT * FROM dynasty3a');
 
         echo '<table>';
-        echo '<tr><th>asianro</th><th>pvm</th><th>otsikko</th><th>dokumentti</th></tr>';
+        echo '<tr><th>Pykala</th><th>pvm</th><th>otsikko</th><th>teksti</th><th>Osallistujat</th></tr>';
 
         while( $t = $tulos->fetch_object() ) {
             echo '<tr>';
-            echo '<td>'.$t->asianro.'</td>';
+            echo '<td>'.$t->Pykala.'</td>';
             echo '<td>'.$t->pvm.'</td>';
             echo '<td>'.$t->otsikko.'</td>';
-            echo '<td>'.$t->dokumentti.'</td>';
+            echo '<td>'.$t->teksti.'</td>';
+            echo '<td>'.$t->Osallistujat.'</td>';
             echo '</tr>';
           }
           echo '</table>';
