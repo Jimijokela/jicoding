@@ -32,7 +32,7 @@
   $sid = session_id();
   $nimi = $_POST['nimi'];
   $salasana = $_POST['salasana'];
-  require_once('t_login.php');  // luodaan PHP-yhteys
+  require_once('p_login.php');  // luodaan PHP-yhteys
 
  $my = new mysqli('localhost','data15','jNTKdg3NTbRBuVEn','data15');
         $my->set_charset("utf8");

@@ -26,13 +26,13 @@
     <h1>Kirjautuminen</h1>
 </div>
 
-<?php
+<?php 
     session_start();
     if($_SESSION['loggedin'] != 'true'){
   $sid = session_id();
   $nimi = $_POST['nimi'];
   $salasana = $_POST['salasana'];
-  require_once('t_login.php');  // luodaan PHP-yhteys
+  require_once('e_login.php');  // luodaan PHP-yhteys
 
  $my = new mysqli('localhost','data15','jNTKdg3NTbRBuVEn','data15');
         $my->set_charset("utf8");
@@ -48,13 +48,13 @@ $res = mysqli_query($my, $sql) or die('Error #1');
 
    if($rows>0){
 
-//   $tmp = mysqli_query($con,"UPDATE login SET
+//   $tmp = mysqli_query($con,"UPDATE login SET 
 //   sid='".session_id()."'WHERE UID='.$u->uid.'");
    echo "kirjautunimen onnistui<br>";
    echo "Voit nyt lisätä tai poistaa taulukkoja.<br>";
    echo "Siirry <a href='lisaa_elpk.php'>lisäämis</a> tai <a href='poista_elpk.php'>poistamis</a> sivulle.";
    $_SESSION['nimi'] = $nimi;
-   $_SESSION['loggedin'] = 'true';
+   $_SESSION['loggedin'] = 'true';   
   }
  else{
   echo "kirjautuminen epäonnistui<br>";
@@ -79,7 +79,6 @@ echo "Siirry <a href='lisaa_elpk.php'>lisäämis</a> tai <a href='poista_elpk.ph
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
     </body>
 </html>

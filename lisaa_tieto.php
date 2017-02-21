@@ -41,6 +41,14 @@ table, th, td {
       <a href="nollaa_tid.php">Nollaa tid</a>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <a href="lisaa_elpk.php">ELPK</a>
+    </div>
+    <div class="col">
+      <a href="lisaa_poy.php">Poytakirja</a>
+    </div>
+  </div>
 </div>
     
 <div class="container" style="background-color:#f2f3f4">
