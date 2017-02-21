@@ -63,7 +63,7 @@
                     echo '<tr>';
                     echo '<td>'.$t->id.'</td>';
                     echo '<td>'.$t->pvm.'</td>';
-                    echo '<td>'.$t->elkp.'</td>';
+                    echo '<td><a href="elpk.php?id='.$t->id.'">'.$t->elpk.'</a></td>';
                     echo '<td>'.$t->tid.'</td>';
                     echo '</tr>';
 
