@@ -55,7 +55,7 @@ table, th, td {
 <form method="GET">
   <div class="row">
     <div class="col">    
-<button type="submit" name="send" value="true">Nollaa tid</button>
+<button type="submit" name="send" value="true">Nollaa tid/id/asianro</button>
     </div>
   </div>
 </form>
@@ -76,37 +76,14 @@ table, th, td {
 
           $my->set_charset('utf8');
           $my->query('ALTER TABLE dynasty AUTO_INCREMENT = 1');
+          $my->query('ALTER TABLE dynasty2 AUTO_INCREMENT = 1');
+          $my->query('ALTER TABLE dynasty2b AUTO_INCREMENT = 1');
 
         $my->close();   # Suljetaan yhteys tietokantaan
     }
     ?>
 
-<?php
-    $my=mysqli_connect("127.0.0.1","data15","jNTKdg3NTbRBuVEn","data15");
-
-    if($my->mysql_errno) {
-          die("MySQL, virhe yhteyden luonnissa: ".$my->connect_error);
-      }
-
-      $my->set_charset('utf8');
-    $tulos = $my->query('SELECT * FROM dynasty');
-
-        echo '<table>';
-        echo
-        '<tr><th>tid</th><th>Toimielimet</th><th>Kokous</th><th>Dokumentti</th></tr>';
-
-        while( $t = $tulos->fetch_object() ) {
-            echo '<tr>';
-            echo '<td>'.$t->tid.'</td>';
-            echo '<td>'.$t->Toimielimet.'</td>';
-            echo '<td>'.$t->Kokous.'</td>';
-            echo '<td>'.$t->Dokumentti.'</td>';
-            echo '</tr>';
-          }
-          echo '</table>';
-
-    $my->close();   # Suljetaan yhteys tietokantaan
-?>
+<h1>Nollaa tid/id/asianro lasku suurimpaan lukuun plus yksi.</h1>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
