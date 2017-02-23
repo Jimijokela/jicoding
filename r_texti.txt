@@ -1,0 +1,58 @@
+(
+http://cosmo.kpedu.fi/~jimijokela/git/jicoding/test_template_a.php
+
+http://cosmo.kpedu.fi/~jimijokela/php2017/
+
+http://kokkola.oncloudos.com/cgi/DREQUEST.PHP?page=meeting_frames
+
+https://github.com/Jimijokela/jicoding
+
+https://docs.google.com/presentation/d/1QaGuwcZpGFc1Cs3vGabhIuCNgaQR3JrImywCTfH3m7I/edit#slide=id.gfba000eef_0_11
+
+https://trello.com/b/O9WAlHFL/pari-naytto
+
+https://docs.google.com/presentation/d/1gsTKurhwR-Ujo7PbvQSYn9ENie5a7uqROmeEsUyQ14A/edit#slide=id.g1b01db903b_0_36
+
+https://docs.google.com/presentation/d/1WbHcc7maRYT8iM2UJnwgIJrBqO5wCgay1Rg847uqXjQ/edit#slide=id.p
+
+https://v4-alpha.getbootstrap.com/getting-started/introduction/
+
+https://v4-alpha.getbootstrap.com/layout/grid/
+
+http://cosmo.kpedu.fi/tietokanta/
+)
+
+www.op-ura.fi/#jobs
+https://fonts.google.com/specimen/Nunito?selection
+https://www.sketchapp.com/
+
+
+(	toimielimet.php		Tämä malli oli tehty foundationilla.
+
+<div class="row">
+	<div class="small-6 medium-6 large-8 columns">Toimielimet</div>
+	<div class="small-6 medium-3 large-2 columns">Viimeisin kokous</div>
+	<div class="small-12 medium-2 large-2 columns">Dokumentti tyyppi</div>
+</div>
+
+<?php
+include "settings.php";
+
+$otsikko = 'SELECT * FROM 665B_toimielimet';
+$nayta = $my->query($otsikko);
+
+while($t = $nayta->fetch_object())
+{
+echo '<div class="row">';
+echo '<div class="small-6 medium-6 large-8 columns">.$t->Nimi.</div>';
+echo '<div class="small-6 medium-3 large-2 columns">13.13.2017</div>';
+echo '<div class="small-6 medium-2 large-2 columns">Pöytäkirja</div>';
+echo '</div>';
+}
+
+$my -> close();
+?>
+)
+
+
+SELECT * from dynasty2 WHERE id = '.$_GET["id"].'

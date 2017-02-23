@@ -1,0 +1,28 @@
+<?php
+    $my=mysqli_connect("127.0.0.1","data15","jNTKdg3NTbRBuVEn","data15");
+
+    if($my->mysql_errno) {
+          die("MySQL, virhe yhteyden luonnissa: ".$my->connect_error);
+      }
+
+      $my->set_charset('utf8');
+    $tulos = $my->query('SELECT * FROM dynasty');
+
+        echo '<table>';
+        echo
+        '<tr><th>tid</th><th>Toimielimet</th><th>Kokous</th><th>Dokumentti</th></tr>';
+
+        while( $t = $tulos->fetch_object() ) {
+            echo '<tr>';
+            echo '<td>'.$t->tid.'</td>';
+            echo '<td>'.$t->Toimielimet.'</td>';
+            echo '<td>'.$t->Kokous.'</td>';
+            echo '<td>'.$t->Dokumentti.'</td>';
+            echo '</tr>';
+          }
+          echo '</table>';
+
+    $my->close();   # Suljetaan yhteys tietokantaan
+?>
+
+mysql auto increment start value
